@@ -47,7 +47,7 @@ async function fetchInfosEnnemi(nomRecherche) {
         ? $$('.elementor-element-823722d').find('ul:first li').map((_, el) => $$(el).text()).toArray()
         : ['Commun ou élite identique à la créature originelle'];
     const succes = type === 'Boss'
-        ? $$('.elementor-element-823722d').find('ul:last').text().trim().split('\n')
+        ? $$('.elementor-element-823722d').find('ul:last li').map((_, el) => $$(el).text()).toArray()
         : $$('.elementor-element-980e285').find('b, strong').text().trim().split('.').slice(0, -1);
 
     return {

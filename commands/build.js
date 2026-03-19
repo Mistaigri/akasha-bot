@@ -61,9 +61,9 @@ async function fetchInfosPersonnage(nomRecherche) {
         role: $$('h3').first().text().trim(),
         buildImage,
         armes_conseillees: $$('.elementor-element-52edd3c, .elementor-element-c9f5115, .elementor-element-0e4697f')
-            .find('ol:first li').map((_, el) => $$(el).text()).toArray(),
+            .find('ol:first li, ul:first li').map((_, el) => $$(el).text()).toArray(),
         sets_conseilles: $$('.elementor-element-52edd3c, .elementor-element-c9f5115, .elementor-element-0e4697f')
-            .find('ol:last li').map((_, el) => $$(el).text()).toArray()
+            .find('ol:last li, ul:last li').map((_, el) => $$(el).text()).toArray()
     };
 }
 
