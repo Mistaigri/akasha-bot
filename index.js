@@ -2,6 +2,7 @@ require('dotenv').config();
 const { Client, GatewayIntentBits, Collection, ActivityType } = require('discord.js');
 const fs = require('fs');
 const { log } = require('./utils/logger');
+const { fetchAll } = require('./utils/data-builder');
 
 const client = new Client({
     intents: [
@@ -20,6 +21,7 @@ for (const file of commandFiles) {
 
 client.once('ready', async () => {
     log(`Akasha est en ligne ! Connecté en tant que ${client.user.tag}`);
+    await fetchAll(); // Récupérer les données de tous les personnages, armes, artefacts et ennemis au démarrage du bot
 });
 
 // Gestion autocomplétion
