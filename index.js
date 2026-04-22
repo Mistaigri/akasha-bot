@@ -20,8 +20,9 @@ for (const file of commandFiles) {
 }
 
 client.once('ready', async () => {
-    log(`Akasha est en ligne ! Connecté en tant que ${client.user.tag}`);
     await fetchAll(); // Récupérer les données de tous les personnages, armes, artefacts et ennemis au démarrage du bot
+    client.user.setActivity('Genshin Impact', { type: ActivityType.Playing });
+    log(`Akasha est en ligne ! Connecté en tant que ${client.user.tag}`);
 });
 
 // Gestion autocomplétion
